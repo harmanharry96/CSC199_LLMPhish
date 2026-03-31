@@ -5,11 +5,13 @@ __pycache__/
 
 .DS_Store
 
+# Ignore data files
 data/raw/*
 data/cleaned/*
 data/final/*
 data/splits/*
 
+# Keep .gitkeep files to maintain directory structure
 !data/raw/.gitkeep
 !data/cleaned/.gitkeep
 !data/final/.gitkeep
