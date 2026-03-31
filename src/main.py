@@ -1,21 +1,44 @@
-from gemini import get_gemini_client
+from data_loader import load_csv
+from data_cleaner import clean_dataframe
+from data_builder import merge_datasets
+from config import RAW_DIR, CLEANED_DIR, FINAL_DIR
+
+def main():
+    synthetic_path = f"{RAW_DIR}/synthetic_emails.csv"
+
+    synthetic_df = load_csv(synthetic_path)
+
+    synthetic_clean = clean_dataframe(
+        synthetic_df,
+        text_col= "text",
+        label_col= "label",
+        source_name= "synthetic2026",
+        phishing_type_col= "phishing_type"
+    )
 
 
-def check_phishing():
-    try:
-        client = get_gemini_client()
+    synthetic_clean.to_csv(f"{CLEANED_DIR}/synthetic_clean.csv", index=False)
 
-        response = client.models.generate_content(
-            model="gemini-2.5-flash",
-            contents="Analyze this email for phishing indicators: 'Your account has been suspended. Click here to verify immediately.'"
-        )
+    final_df = merge_datasets([synthetic_clean])
+    final_df.to_csv(f"{FINAL_DIR}/dataset_v1.csv", index=False)
+    
+    print("Data pipeline completed. \n")
+    print("First 5 rows: ")
+    print(final_df.head())
+    print("\nLabel distribution:")
+    
+    #Validation print statements to check the distribution of labels
+    print("\nTotal rows: ")
+    print(len(final_df))
+    
+    print("\nMissing values:")
+    print(final_df.isnull().sum())
 
-        print("\n--- Analysis Result ---")
-        print(response.text)
-
-    except Exception as e:
-        print(f"Error: {e}")
-
+    print("\nPhishing type distribution:")
+    print(final_df["phishing_type"].value_counts())
+    
+    print(final_df["label"].value_counts())
 
 if __name__ == "__main__":
-    check_phishing()
+    main()
+
