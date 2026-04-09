@@ -1,14 +1,19 @@
 import sys
 import os
 
+#For testing 
+print("llm_test.py started")
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../src")))
+print("Path added to sys.path")
 
 from email_parser import parse_email
-from llm_check import analyze_with_llm
+print("email_parser imported successfully")
 
+from llm_check import analyze_with_llm
+print("llm_check imported successfully")
 
 def run_test():
-    print("llm_test.py started")
+    print("testing started")
 
     sample_email = """
 Subject: Urgent Account Verification
