@@ -2,8 +2,6 @@ from gemini import get_gemini_client
 
 
 def analyze_with_llm(parsed_email):
-    print("Inside analyze_with_llm()")
-
     client = get_gemini_client()
 
     prompt = f"""
@@ -26,28 +24,21 @@ Return your response in this format:
 Risk Level: (Low / Medium / High)
 Confidence Score: (0-100)
 Final Verdict: (Phishing / Legitimate)
+Short Reason: (1-2 sentence explanation)
 """
 
     try:
-        print("Sending request to Gemini...")
-
         response = client.models.generate_content(
             model="gemini-2.5-flash",
             contents=prompt
         )
-
-        print("Response received from Gemini")
 
         text_output = getattr(response, "text", None)
 
         if text_output and text_output.strip():
             return text_output.strip()
 
-        candidates = getattr(response, "candidates", None)
-        if candidates:
-            return str(candidates)
+        return "LLM returned no usable output."
 
-        return "No usable output returned by Gemini."
-
-    except Exception as e:
-        return f"Error: {e}"
+    except Exception:
+        return "LLM Analysis Unavailable (Gemini API busy or temporarily unreachable)."

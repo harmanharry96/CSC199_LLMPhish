@@ -2,20 +2,41 @@ import csv
 import os
 import sys
 
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'src')))
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "src")))
 
 from email_parser import parse_email
 from feature_extract import extract_features
 from llm_check import analyze_with_llm
 from scorer import score_email
 
-def load_dataset(input_csv):
+
+MAX_SAMPLES = 10  # Starting small for testing
+
+
+def load_dataset(input_csv, max_samples=None):
     samples = []
-    with open(input_csv, 'r', encoding='utf-8') as file:
+
+    with open(input_csv, "r", encoding="utf-8") as file:
         reader = csv.DictReader(file)
-        for row in reader:
+
+        for i, row in enumerate(reader):
+            if max_samples is not None and i >= max_samples:
+                break
             samples.append(row)
+
     return samples
+
+
+def verdict_to_label(final_verdict):
+    """
+    Convert final verdict into numeric label.
+    1 = phishing/suspicious
+    0 = legitimate
+    """
+    if final_verdict in ["Phishing", "Suspicious"]:
+        return 1
+    return 0
+
 
 def calculate_metrics(results):
     total = len(results)
@@ -31,15 +52,19 @@ def calculate_metrics(results):
 
         if actual == predicted:
             correct += 1
+
         if actual == 0 and predicted == 1:
             false_positives += 1
+
         if actual == 1 and predicted == 0:
             false_negatives += 1
+
         if actual == 1 and predicted == 1:
             true_positives += 1
+
         if actual == 0 and predicted == 0:
             true_negatives += 1
-    
+
     accuracy = correct / total if total > 0 else 0
 
     return {
@@ -49,71 +74,83 @@ def calculate_metrics(results):
         "true_positives": true_positives,
         "true_negatives": true_negatives,
         "false_positives": false_positives,
-        "false_negatives": false_negatives
-
+        "false_negatives": false_negatives,
     }
+
 
 def save_csv(rows, output_file):
     if not rows:
-        return 
-    
-    with open(output_file, 'w', newline='', encoding='utf-8') as file:
+        return
+
+    with open(output_file, "w", newline="", encoding="utf-8") as file:
         writer = csv.DictWriter(file, fieldnames=rows[0].keys())
         writer.writeheader()
         writer.writerows(rows)
 
-def run_testing_framework(input_csv, results_csv, error_csv):
-    dataset = load_dataset(input_csv)
+
+def run_testing_framework(input_csv, results_csv, error_csv, max_samples=10):
+    dataset = load_dataset(input_csv, max_samples=max_samples)
     results = []
 
-    for i, row in enumerate(dataset, start=1):
-        subject = row.get("subject", "")
-        body = row.get("body", "")
-        actual_label = row.get("label", "0")
+    print("\n=== PhishLLM Testing Framework Started ===")
+    print(f"Loaded {len(dataset)} sample emails.\n")
 
-        raw_email = {
-            "subject": subject,
-            "body": body
-        }
+    for i, row in enumerate(dataset, start=1):
+        raw_email = row.get("text", "")
+        actual_label = int(row.get("label", 0))
+        source = row.get("source", "unknown")
+        phishing_type = row.get("phishing_type", "unknown")
 
         try:
+            print(f"Processing email {i}/{len(dataset)}...")
+
             parsed_email = parse_email(raw_email)
             features = extract_features(parsed_email)
             llm_result = analyze_with_llm(parsed_email)
             decision = score_email(features, llm_result)
 
-            predicted_label = int(decision["label"])
-            reason = decision.get("reason", "")
+            final_verdict = decision["final_verdict"]
+            predicted_label = verdict_to_label(final_verdict)
 
             result_row = {
-                "id": row.get("id", i),
-                "subject": subject,
-                "body": body,
+                "id": i,
                 "actual_label": actual_label,
                 "predicted_label": predicted_label,
                 "match": actual_label == predicted_label,
-                "decision_reason": reason,
+                "final_verdict": final_verdict,
+                "risk_level": decision["risk_level"],
+                "feature_score": decision["feature_score"],
+                "llm_score": decision["llm_score"],
+                "final_score": decision["final_score"],
+                "source": source,
+                "phishing_type": phishing_type,
+                "subject": parsed_email.get("subject"),
+                "links": parsed_email.get("links"),
                 "features": str(features),
-                "llm_result": str(llm_result)
-
+                "llm_result": str(llm_result),
             }
 
             results.append(result_row)
-            print(f"Processed email {i}/{len(dataset)}")
 
         except Exception as e:
             print(f"Error processing email {i}: {e}")
+
             results.append({
-                "id": row.get("id", i),
-                "subject": subject,
-                "body": body,
+                "id": i,
                 "actual_label": actual_label,
                 "predicted_label": -1,
                 "match": False,
-                "decision_reason": f"Error: {str(e)}",
+                "final_verdict": "Error",
+                "risk_level": "Error",
+                "feature_score": 0,
+                "llm_score": 0,
+                "final_score": 0,
+                "source": source,
+                "phishing_type": phishing_type,
+                "subject": "",
+                "links": "",
                 "features": "",
-                "llm_result": ""
-
+                "llm_result": f"Error: {str(e)}",
             })
 
     valid_results = [r for r in results if r["predicted_label"] in [0, 1]]
@@ -124,7 +161,7 @@ def run_testing_framework(input_csv, results_csv, error_csv):
 
     metrics = calculate_metrics(valid_results)
 
-    print("\n--- Testing Summary ---")
+    print("\n=== Testing Summary ===")
     print(f"Total Samples: {metrics['total_samples']}")
     print(f"Correct Predictions: {metrics['correct_predictions']}")
     print(f"Accuracy: {metrics['accuracy']:.2%}")
@@ -133,11 +170,19 @@ def run_testing_framework(input_csv, results_csv, error_csv):
     print(f"False Positives: {metrics['false_positives']}")
     print(f"False Negatives: {metrics['false_negatives']}")
 
+    print("\nResults saved to:")
+    print(results_csv)
+    print(error_csv)
+
+    print("\n=== Testing Framework Completed ===")
+
+
 if __name__ == "__main__":
     os.makedirs("results", exist_ok=True)
 
     run_testing_framework(
-        input_csv="data/splits/test.csv",
+        input_csv="data/final/dataset_v2.csv",
         results_csv="results/test_results.csv",
-        error_csv="results/test_errors.csv"
+        error_csv="results/error_log.csv",
+        max_samples=MAX_SAMPLES,
     )
