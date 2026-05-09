@@ -10,7 +10,7 @@ from llm_check import analyze_with_llm
 from scorer import score_email
 
 
-MAX_SAMPLES = 10  # Starting small for testing
+MAX_SAMPLES = 50  # Starting small for testing
 
 
 def load_dataset(input_csv, max_samples=None):

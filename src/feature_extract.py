@@ -1,11 +1,29 @@
 SUSPICIOUS_KEYWORDS = [
-    "urgent",
     "verify",
+    "password",
     "passwords",
     "suspended",
     "click",
-    "bank",
-    "account",
+    "login",
+    "confirm",
+    "update",
+    "secure",
+    "validate",
+    "payment",
+    "invoice",
+    "access",
+    "credential",
+    "credentials",
+    "limited access",
+    "security alert",
+    "unauthorized",
+    "reset",
+    "unusual activity",
+    "technical issue",
+    "help desk",
+    "remote access",
+    "account locked",
+    "account suspended",
 ]
 
 URGENCY_WORDS = [
@@ -13,10 +31,11 @@ URGENCY_WORDS = [
     "immediately",
     "asap",
     "right now",
-    "important",
-    "today",
     "action required",
     "final notice",
+    "within 24 hours",
+    "last warning",
+    "account closure",
 ]
 
 def extract_features(parsed_email):
