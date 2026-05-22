@@ -1,5 +1,6 @@
 .env
 venv/
+.venv/
 __pycache__/
 *.pyc
 
@@ -16,3 +17,5 @@ data/splits/*
 !data/cleaned/.gitkeep
 !data/final/.gitkeep
 !data/splits/.gitkeep
+
+*.log

@@ -1,0 +1,393 @@
+id,actual_label,predicted_label,match,final_verdict,risk_level,feature_score,llm_score,final_score,source,phishing_type,subject,links,features,llm_result
+5,1,0,False,Legitimate,Low,23,10,33,synthetic2026,social_engineering_advanced,,[],"{'suspicious_keywords_found': ['payment'], 'num_suspicious_keywords': 1, 'urgency_words_found': ['right now'], 'has_urgency': True, 'has_links': False, 'num_links': 0, 'has_email_addresses': False, 'num_email_addresses': 0}","Risk Level: Low
+Confidence Score: 50
+Final Verdict: Legitimate
+Short Reason: Gemini was unavailable, so fallback analysis was used. No strong phishing indicator combinations were detected."
+7,1,0,False,Legitimate,Low,16,10,26,synthetic2026,generic_phishing,,[],"{'suspicious_keywords_found': ['click', 'update'], 'num_suspicious_keywords': 2, 'urgency_words_found': [], 'has_urgency': False, 'has_links': False, 'num_links': 0, 'has_email_addresses': False, 'num_email_addresses': 0}","Risk Level: Low
+Confidence Score: 50
+Final Verdict: Legitimate
+Short Reason: Gemini was unavailable, so fallback analysis was used. No strong phishing indicator combinations were detected."
+12,1,0,False,Legitimate,Low,0,10,10,synthetic2026,tech_support,,[],"{'suspicious_keywords_found': [], 'num_suspicious_keywords': 0, 'urgency_words_found': [], 'has_urgency': False, 'has_links': False, 'num_links': 0, 'has_email_addresses': False, 'num_email_addresses': 0}","Risk Level: Low
+Confidence Score: 50
+Final Verdict: Legitimate
+Short Reason: Gemini was unavailable, so fallback analysis was used. No strong phishing indicator combinations were detected."
+18,0,1,False,Suspicious,Medium,28,10,38,enron,legitimate,,"['http://enews.buy.com/cgi-bin5/flo?y=eE4N0D4S5I0Blu0BCJO0Aq', 'http://enews.buy.com/cgi-bin5/flo?y=eE4N0D4S5I0Blu0BC420Az', 'http://enews.buy.com/cgi-bin5/flo?y=eE4N0D4S5I0Blu0BC7u0AB', 'http://enews.buy.com/cgi-bin5/flo?y=eE4N0D4S5I0Blu0BC7v0AC', 'http://enews.buy.com/cgi-bin5/flo?y=eE4N0D4S5I0Blu0BC7w0AD', 'http://enews.buy.com/cgi-bin5/flo?y=eE4N0D4S5I0Blu0BC7x0AE', 'http://enews.buy.com/cgi-bin5/flo?y=eE4N0D4S5I0Blu0BC7y0AF', 'http://enews.buy.com/cgi-bin5/flo?y=eE4N0D4S5I0Blu0BC450A3', 'http://enews.buy.com/cgi-bin5/flo?y=eE4N0D4S5I0Blu0BC7z0AG', 'http://enews.buy.com/cgi-bin5/flo?y=eE4N0D4S5I0Blu0BC710A2', 'http://enews.buy.com/cgi-bin5/flo?y=eE4N0D4S5I0Blu0BC430A1', 'http://enews.buy.com/cgi-bin5/flo?y=eE4N0D4S5I0Blu0BC720A3', 'http://enews.buy.com/cgi-bin5/flo?y=eE4N0D4S5I0Blu0BC730A4', 'http://enews.buy.com/cgi-bin5/flo?y=eE4N0D4S5I0Blu06VY0At', 'http://enews.buy.com/cgi-bin5/flo?y=eE4N0D4S5I0Blu0BCJC0Ae', 'http://enews.buy.com/cgi-bin5/flo?y=eE4N0D4S5I0Blu04pB0Au', 'http://enews.buy.com/cgi-bin5/flo?y=eE4N0D4S5I0Blu0RVU0AJ', 'http://enews.buy.com/cgi-bin5/flo?y=eE4N0D4S5I0Blu0FWL0Ax', 'http://enews.buy.com/cgi-bin5/flo?y=eE4N0D4S5I0Blu0bIi0Ag', 'http://enews.buy.com/cgi-bin5/flo?y=eE4N0D4S5I0Blu0FWQ0A3', 'http://enews.buy.com/cgi-bin5/flo?y=eE4N0D4S5I0Blu0FWP0A2', 'http://enews.buy.com/cgi-bin5/flo?y=eE4N0D4S5I0Blu04o40Af', 'http://enews.buy.com/cgi-bin5/flo?y=eE4N0D4S5I0Blu0FWN0Az', 'http://enews.buy.com/cgi-bin5/flo?y=eE4N0D4S5I0Blu04o10Ac', 'http://enews.buy.com/cgi-bin5/flo?y=eE4N0D4S5I0Blu0bIc0Aa', 'http://enews.buy.com/cgi-bin5/flo?y=eE4N0D4S5I0Blu04pH0A1', 'http://enews.buy.com/cgi-bin5/profile?y=eE4N0D4S5I0BluP']","{'suspicious_keywords_found': ['click'], 'num_suspicious_keywords': 1, 'urgency_words_found': [], 'has_urgency': False, 'has_links': True, 'num_links': 27, 'has_email_addresses': False, 'num_email_addresses': 0}","Risk Level: Low
+Confidence Score: 50
+Final Verdict: Legitimate
+Short Reason: Gemini was unavailable, so fallback analysis was used. No strong phishing indicator combinations were detected."
+19,1,0,False,Legitimate,Low,0,10,10,synthetic2026,tech_support,,[],"{'suspicious_keywords_found': [], 'num_suspicious_keywords': 0, 'urgency_words_found': [], 'has_urgency': False, 'has_links': False, 'num_links': 0, 'has_email_addresses': False, 'num_email_addresses': 0}","Risk Level: Low
+Confidence Score: 50
+Final Verdict: Legitimate
+Short Reason: Gemini was unavailable, so fallback analysis was used. No strong phishing indicator combinations were detected."
+20,0,1,False,Phishing,High,34,40,74,enron,legitimate,,['http://www.nymexaccess.com'],"{'suspicious_keywords_found': ['password', 'login', 'access'], 'num_suspicious_keywords': 3, 'urgency_words_found': [], 'has_urgency': False, 'has_links': True, 'num_links': 1, 'has_email_addresses': True, 'num_email_addresses': 2}","Risk Level: High
+Confidence Score: 70
+Final Verdict: Phishing
+Short Reason: Gemini was unavailable, so fallback analysis was used. Multiple phishing indicators were detected in combination."
+27,1,0,False,Legitimate,Low,16,10,26,synthetic2026,generic_phishing,,[],"{'suspicious_keywords_found': ['click', 'update'], 'num_suspicious_keywords': 2, 'urgency_words_found': [], 'has_urgency': False, 'has_links': False, 'num_links': 0, 'has_email_addresses': False, 'num_email_addresses': 0}","Risk Level: Low
+Confidence Score: 50
+Final Verdict: Legitimate
+Short Reason: Gemini was unavailable, so fallback analysis was used. No strong phishing indicator combinations were detected."
+30,1,0,False,Legitimate,Low,8,10,18,synthetic2026,romance_dating,,[],"{'suspicious_keywords_found': ['payment'], 'num_suspicious_keywords': 1, 'urgency_words_found': [], 'has_urgency': False, 'has_links': False, 'num_links': 0, 'has_email_addresses': False, 'num_email_addresses': 0}","Risk Level: Low
+Confidence Score: 50
+Final Verdict: Legitimate
+Short Reason: Gemini was unavailable, so fallback analysis was used. No strong phishing indicator combinations were detected."
+35,1,0,False,Legitimate,Low,0,10,10,synthetic2026,threats,,[],"{'suspicious_keywords_found': [], 'num_suspicious_keywords': 0, 'urgency_words_found': [], 'has_urgency': False, 'has_links': False, 'num_links': 0, 'has_email_addresses': False, 'num_email_addresses': 0}","Risk Level: Low
+Confidence Score: 50
+Final Verdict: Legitimate
+Short Reason: Gemini was unavailable, so fallback analysis was used. No strong phishing indicator combinations were detected."
+36,1,0,False,Legitimate,Low,23,10,33,synthetic2026,social_engineering_advanced,,[],"{'suspicious_keywords_found': ['payment'], 'num_suspicious_keywords': 1, 'urgency_words_found': ['right now'], 'has_urgency': True, 'has_links': False, 'num_links': 0, 'has_email_addresses': False, 'num_email_addresses': 0}","Risk Level: Low
+Confidence Score: 50
+Final Verdict: Legitimate
+Short Reason: Gemini was unavailable, so fallback analysis was used. No strong phishing indicator combinations were detected."
+41,1,0,False,Legitimate,Low,16,10,26,synthetic2026,generic_phishing,,[],"{'suspicious_keywords_found': ['click', 'update'], 'num_suspicious_keywords': 2, 'urgency_words_found': [], 'has_urgency': False, 'has_links': False, 'num_links': 0, 'has_email_addresses': False, 'num_email_addresses': 0}","Risk Level: Low
+Confidence Score: 50
+Final Verdict: Legitimate
+Short Reason: Gemini was unavailable, so fallback analysis was used. No strong phishing indicator combinations were detected."
+43,1,0,False,Legitimate,Low,0,10,10,synthetic2026,tech_support,,[],"{'suspicious_keywords_found': [], 'num_suspicious_keywords': 0, 'urgency_words_found': [], 'has_urgency': False, 'has_links': False, 'num_links': 0, 'has_email_addresses': False, 'num_email_addresses': 0}","Risk Level: Low
+Confidence Score: 50
+Final Verdict: Legitimate
+Short Reason: Gemini was unavailable, so fallback analysis was used. No strong phishing indicator combinations were detected."
+48,1,0,False,Legitimate,Low,0,10,10,synthetic2026,threats,,[],"{'suspicious_keywords_found': [], 'num_suspicious_keywords': 0, 'urgency_words_found': [], 'has_urgency': False, 'has_links': False, 'num_links': 0, 'has_email_addresses': False, 'num_email_addresses': 0}","Risk Level: Low
+Confidence Score: 50
+Final Verdict: Legitimate
+Short Reason: Gemini was unavailable, so fallback analysis was used. No strong phishing indicator combinations were detected."
+53,1,0,False,Legitimate,Low,23,10,33,synthetic2026,social_engineering_advanced,,[],"{'suspicious_keywords_found': ['payment'], 'num_suspicious_keywords': 1, 'urgency_words_found': ['right now'], 'has_urgency': True, 'has_links': False, 'num_links': 0, 'has_email_addresses': False, 'num_email_addresses': 0}","Risk Level: Low
+Confidence Score: 50
+Final Verdict: Legitimate
+Short Reason: Gemini was unavailable, so fallback analysis was used. No strong phishing indicator combinations were detected."
+55,1,0,False,Legitimate,Low,0,10,10,synthetic2026,authority_scam,,[],"{'suspicious_keywords_found': [], 'num_suspicious_keywords': 0, 'urgency_words_found': [], 'has_urgency': False, 'has_links': False, 'num_links': 0, 'has_email_addresses': False, 'num_email_addresses': 0}","Risk Level: Low
+Confidence Score: 50
+Final Verdict: Legitimate
+Short Reason: Gemini was unavailable, so fallback analysis was used. No strong phishing indicator combinations were detected."
+59,0,1,False,Suspicious,Medium,16,25,41,enron,legitimate,,[],"{'suspicious_keywords_found': ['confirm', 'payment'], 'num_suspicious_keywords': 2, 'urgency_words_found': [], 'has_urgency': False, 'has_links': False, 'num_links': 0, 'has_email_addresses': False, 'num_email_addresses': 0}","Risk Level: Medium
+Confidence Score: 55
+Final Verdict: Phishing
+Short Reason: Gemini was unavailable, so fallback analysis was used. Some suspicious indicators were detected, but confidence is limited."
+66,1,0,False,Legitimate,Low,23,10,33,synthetic2026,social_engineering_advanced,,[],"{'suspicious_keywords_found': ['payment'], 'num_suspicious_keywords': 1, 'urgency_words_found': ['right now'], 'has_urgency': True, 'has_links': False, 'num_links': 0, 'has_email_addresses': False, 'num_email_addresses': 0}","Risk Level: Low
+Confidence Score: 50
+Final Verdict: Legitimate
+Short Reason: Gemini was unavailable, so fallback analysis was used. No strong phishing indicator combinations were detected."
+70,1,0,False,Legitimate,Low,8,10,18,synthetic2026,romance_dating,,[],"{'suspicious_keywords_found': ['payment'], 'num_suspicious_keywords': 1, 'urgency_words_found': [], 'has_urgency': False, 'has_links': False, 'num_links': 0, 'has_email_addresses': False, 'num_email_addresses': 0}","Risk Level: Low
+Confidence Score: 50
+Final Verdict: Legitimate
+Short Reason: Gemini was unavailable, so fallback analysis was used. No strong phishing indicator combinations were detected."
+72,1,0,False,Legitimate,Low,8,10,18,synthetic2026,romance_dating,,[],"{'suspicious_keywords_found': ['payment'], 'num_suspicious_keywords': 1, 'urgency_words_found': [], 'has_urgency': False, 'has_links': False, 'num_links': 0, 'has_email_addresses': False, 'num_email_addresses': 0}","Risk Level: Low
+Confidence Score: 50
+Final Verdict: Legitimate
+Short Reason: Gemini was unavailable, so fallback analysis was used. No strong phishing indicator combinations were detected."
+74,1,0,False,Legitimate,Low,16,10,26,synthetic2026,generic_phishing,,[],"{'suspicious_keywords_found': ['click', 'update'], 'num_suspicious_keywords': 2, 'urgency_words_found': [], 'has_urgency': False, 'has_links': False, 'num_links': 0, 'has_email_addresses': False, 'num_email_addresses': 0}","Risk Level: Low
+Confidence Score: 50
+Final Verdict: Legitimate
+Short Reason: Gemini was unavailable, so fallback analysis was used. No strong phishing indicator combinations were detected."
+79,1,0,False,Legitimate,Low,0,10,10,synthetic2026,authority_scam,,[],"{'suspicious_keywords_found': [], 'num_suspicious_keywords': 0, 'urgency_words_found': [], 'has_urgency': False, 'has_links': False, 'num_links': 0, 'has_email_addresses': False, 'num_email_addresses': 0}","Risk Level: Low
+Confidence Score: 50
+Final Verdict: Legitimate
+Short Reason: Gemini was unavailable, so fallback analysis was used. No strong phishing indicator combinations were detected."
+80,1,0,False,Legitimate,Low,8,10,18,synthetic2026,romance_dating,,[],"{'suspicious_keywords_found': ['payment'], 'num_suspicious_keywords': 1, 'urgency_words_found': [], 'has_urgency': False, 'has_links': False, 'num_links': 0, 'has_email_addresses': False, 'num_email_addresses': 0}","Risk Level: Low
+Confidence Score: 50
+Final Verdict: Legitimate
+Short Reason: Gemini was unavailable, so fallback analysis was used. No strong phishing indicator combinations were detected."
+84,1,0,False,Legitimate,Low,0,10,10,synthetic2026,authority_scam,,[],"{'suspicious_keywords_found': [], 'num_suspicious_keywords': 0, 'urgency_words_found': [], 'has_urgency': False, 'has_links': False, 'num_links': 0, 'has_email_addresses': False, 'num_email_addresses': 0}","Risk Level: Low
+Confidence Score: 50
+Final Verdict: Legitimate
+Short Reason: Gemini was unavailable, so fallback analysis was used. No strong phishing indicator combinations were detected."
+85,1,0,False,Legitimate,Low,0,10,10,synthetic2026,tech_support,,[],"{'suspicious_keywords_found': [], 'num_suspicious_keywords': 0, 'urgency_words_found': [], 'has_urgency': False, 'has_links': False, 'num_links': 0, 'has_email_addresses': False, 'num_email_addresses': 0}","Risk Level: Low
+Confidence Score: 50
+Final Verdict: Legitimate
+Short Reason: Gemini was unavailable, so fallback analysis was used. No strong phishing indicator combinations were detected."
+107,1,0,False,Legitimate,Low,16,10,26,synthetic2026,generic_phishing,,[],"{'suspicious_keywords_found': ['click', 'update'], 'num_suspicious_keywords': 2, 'urgency_words_found': [], 'has_urgency': False, 'has_links': False, 'num_links': 0, 'has_email_addresses': False, 'num_email_addresses': 0}","Risk Level: Low
+Confidence Score: 50
+Final Verdict: Legitimate
+Short Reason: Gemini was unavailable, so fallback analysis was used. No strong phishing indicator combinations were detected."
+109,1,0,False,Legitimate,Low,23,10,33,synthetic2026,social_engineering_advanced,,[],"{'suspicious_keywords_found': ['payment'], 'num_suspicious_keywords': 1, 'urgency_words_found': ['right now'], 'has_urgency': True, 'has_links': False, 'num_links': 0, 'has_email_addresses': False, 'num_email_addresses': 0}","Risk Level: Low
+Confidence Score: 50
+Final Verdict: Legitimate
+Short Reason: Gemini was unavailable, so fallback analysis was used. No strong phishing indicator combinations were detected."
+110,1,0,False,Legitimate,Low,0,10,10,synthetic2026,threats,,[],"{'suspicious_keywords_found': [], 'num_suspicious_keywords': 0, 'urgency_words_found': [], 'has_urgency': False, 'has_links': False, 'num_links': 0, 'has_email_addresses': False, 'num_email_addresses': 0}","Risk Level: Low
+Confidence Score: 50
+Final Verdict: Legitimate
+Short Reason: Gemini was unavailable, so fallback analysis was used. No strong phishing indicator combinations were detected."
+114,1,0,False,Legitimate,Low,0,10,10,synthetic2026,tech_support,,[],"{'suspicious_keywords_found': [], 'num_suspicious_keywords': 0, 'urgency_words_found': [], 'has_urgency': False, 'has_links': False, 'num_links': 0, 'has_email_addresses': False, 'num_email_addresses': 0}","Risk Level: Low
+Confidence Score: 50
+Final Verdict: Legitimate
+Short Reason: Gemini was unavailable, so fallback analysis was used. No strong phishing indicator combinations were detected."
+116,0,1,False,Suspicious,Medium,26,40,66,enron,legitimate,,['http://xms.enron.com'],"{'suspicious_keywords_found': ['password', 'click'], 'num_suspicious_keywords': 2, 'urgency_words_found': [], 'has_urgency': False, 'has_links': True, 'num_links': 1, 'has_email_addresses': True, 'num_email_addresses': 2}","Risk Level: High
+Confidence Score: 70
+Final Verdict: Phishing
+Short Reason: Gemini was unavailable, so fallback analysis was used. Multiple phishing indicators were detected in combination."
+119,1,0,False,Legitimate,Low,0,10,10,synthetic2026,financial_scam,,[],"{'suspicious_keywords_found': [], 'num_suspicious_keywords': 0, 'urgency_words_found': [], 'has_urgency': False, 'has_links': False, 'num_links': 0, 'has_email_addresses': False, 'num_email_addresses': 0}","Risk Level: Low
+Confidence Score: 50
+Final Verdict: Legitimate
+Short Reason: Gemini was unavailable, so fallback analysis was used. No strong phishing indicator combinations were detected."
+120,1,0,False,Legitimate,Low,0,10,10,synthetic2026,threats,,[],"{'suspicious_keywords_found': [], 'num_suspicious_keywords': 0, 'urgency_words_found': [], 'has_urgency': False, 'has_links': False, 'num_links': 0, 'has_email_addresses': False, 'num_email_addresses': 0}","Risk Level: Low
+Confidence Score: 50
+Final Verdict: Legitimate
+Short Reason: Gemini was unavailable, so fallback analysis was used. No strong phishing indicator combinations were detected."
+121,1,0,False,Legitimate,Low,8,10,18,synthetic2026,financial_scam,,[],"{'suspicious_keywords_found': ['payment'], 'num_suspicious_keywords': 1, 'urgency_words_found': [], 'has_urgency': False, 'has_links': False, 'num_links': 0, 'has_email_addresses': False, 'num_email_addresses': 0}","Risk Level: Low
+Confidence Score: 50
+Final Verdict: Legitimate
+Short Reason: Gemini was unavailable, so fallback analysis was used. No strong phishing indicator combinations were detected."
+127,0,1,False,Suspicious,Medium,34,10,44,enron,legitimate,,['www.ft.com/globaleconomy'],"{'suspicious_keywords_found': ['secure', 'payment', 'access'], 'num_suspicious_keywords': 3, 'urgency_words_found': [], 'has_urgency': False, 'has_links': True, 'num_links': 1, 'has_email_addresses': True, 'num_email_addresses': 2}","Risk Level: Low
+Confidence Score: 50
+Final Verdict: Legitimate
+Short Reason: Gemini was unavailable, so fallback analysis was used. No strong phishing indicator combinations were detected."
+131,1,0,False,Legitimate,Low,0,10,10,synthetic2026,financial_scam,,[],"{'suspicious_keywords_found': [], 'num_suspicious_keywords': 0, 'urgency_words_found': [], 'has_urgency': False, 'has_links': False, 'num_links': 0, 'has_email_addresses': False, 'num_email_addresses': 0}","Risk Level: Low
+Confidence Score: 50
+Final Verdict: Legitimate
+Short Reason: Gemini was unavailable, so fallback analysis was used. No strong phishing indicator combinations were detected."
+132,0,1,False,Suspicious,Medium,31,10,41,enron,legitimate,,[],"{'suspicious_keywords_found': ['click', 'secure'], 'num_suspicious_keywords': 2, 'urgency_words_found': ['right now'], 'has_urgency': True, 'has_links': False, 'num_links': 0, 'has_email_addresses': False, 'num_email_addresses': 0}","Risk Level: Low
+Confidence Score: 50
+Final Verdict: Legitimate
+Short Reason: Gemini was unavailable, so fallback analysis was used. No strong phishing indicator combinations were detected."
+135,1,0,False,Legitimate,Low,0,10,10,synthetic2026,threats,,[],"{'suspicious_keywords_found': [], 'num_suspicious_keywords': 0, 'urgency_words_found': [], 'has_urgency': False, 'has_links': False, 'num_links': 0, 'has_email_addresses': False, 'num_email_addresses': 0}","Risk Level: Low
+Confidence Score: 50
+Final Verdict: Legitimate
+Short Reason: Gemini was unavailable, so fallback analysis was used. No strong phishing indicator combinations were detected."
+136,1,0,False,Legitimate,Low,0,10,10,synthetic2026,tech_support,,[],"{'suspicious_keywords_found': [], 'num_suspicious_keywords': 0, 'urgency_words_found': [], 'has_urgency': False, 'has_links': False, 'num_links': 0, 'has_email_addresses': False, 'num_email_addresses': 0}","Risk Level: Low
+Confidence Score: 50
+Final Verdict: Legitimate
+Short Reason: Gemini was unavailable, so fallback analysis was used. No strong phishing indicator combinations were detected."
+138,1,0,False,Legitimate,Low,8,10,18,synthetic2026,financial_scam,,[],"{'suspicious_keywords_found': ['payment'], 'num_suspicious_keywords': 1, 'urgency_words_found': [], 'has_urgency': False, 'has_links': False, 'num_links': 0, 'has_email_addresses': False, 'num_email_addresses': 0}","Risk Level: Low
+Confidence Score: 50
+Final Verdict: Legitimate
+Short Reason: Gemini was unavailable, so fallback analysis was used. No strong phishing indicator combinations were detected."
+139,1,0,False,Legitimate,Low,0,10,10,synthetic2026,financial_scam,,[],"{'suspicious_keywords_found': [], 'num_suspicious_keywords': 0, 'urgency_words_found': [], 'has_urgency': False, 'has_links': False, 'num_links': 0, 'has_email_addresses': False, 'num_email_addresses': 0}","Risk Level: Low
+Confidence Score: 50
+Final Verdict: Legitimate
+Short Reason: Gemini was unavailable, so fallback analysis was used. No strong phishing indicator combinations were detected."
+140,1,0,False,Legitimate,Low,0,10,10,synthetic2026,threats,,[],"{'suspicious_keywords_found': [], 'num_suspicious_keywords': 0, 'urgency_words_found': [], 'has_urgency': False, 'has_links': False, 'num_links': 0, 'has_email_addresses': False, 'num_email_addresses': 0}","Risk Level: Low
+Confidence Score: 50
+Final Verdict: Legitimate
+Short Reason: Gemini was unavailable, so fallback analysis was used. No strong phishing indicator combinations were detected."
+145,1,0,False,Legitimate,Low,0,10,10,synthetic2026,authority_scam,,[],"{'suspicious_keywords_found': [], 'num_suspicious_keywords': 0, 'urgency_words_found': [], 'has_urgency': False, 'has_links': False, 'num_links': 0, 'has_email_addresses': False, 'num_email_addresses': 0}","Risk Level: Low
+Confidence Score: 50
+Final Verdict: Legitimate
+Short Reason: Gemini was unavailable, so fallback analysis was used. No strong phishing indicator combinations were detected."
+148,1,0,False,Legitimate,Low,8,10,18,synthetic2026,tech_support,,[],"{'suspicious_keywords_found': ['update'], 'num_suspicious_keywords': 1, 'urgency_words_found': [], 'has_urgency': False, 'has_links': False, 'num_links': 0, 'has_email_addresses': False, 'num_email_addresses': 0}","Risk Level: Low
+Confidence Score: 50
+Final Verdict: Legitimate
+Short Reason: Gemini was unavailable, so fallback analysis was used. No strong phishing indicator combinations were detected."
+152,1,0,False,Legitimate,Low,8,10,18,synthetic2026,romance_dating,,[],"{'suspicious_keywords_found': ['payment'], 'num_suspicious_keywords': 1, 'urgency_words_found': [], 'has_urgency': False, 'has_links': False, 'num_links': 0, 'has_email_addresses': False, 'num_email_addresses': 0}","Risk Level: Low
+Confidence Score: 50
+Final Verdict: Legitimate
+Short Reason: Gemini was unavailable, so fallback analysis was used. No strong phishing indicator combinations were detected."
+154,1,0,False,Legitimate,Low,0,10,10,synthetic2026,authority_scam,,[],"{'suspicious_keywords_found': [], 'num_suspicious_keywords': 0, 'urgency_words_found': [], 'has_urgency': False, 'has_links': False, 'num_links': 0, 'has_email_addresses': False, 'num_email_addresses': 0}","Risk Level: Low
+Confidence Score: 50
+Final Verdict: Legitimate
+Short Reason: Gemini was unavailable, so fallback analysis was used. No strong phishing indicator combinations were detected."
+155,1,0,False,Legitimate,Low,16,10,26,synthetic2026,generic_phishing,,[],"{'suspicious_keywords_found': ['click', 'update'], 'num_suspicious_keywords': 2, 'urgency_words_found': [], 'has_urgency': False, 'has_links': False, 'num_links': 0, 'has_email_addresses': False, 'num_email_addresses': 0}","Risk Level: Low
+Confidence Score: 50
+Final Verdict: Legitimate
+Short Reason: Gemini was unavailable, so fallback analysis was used. No strong phishing indicator combinations were detected."
+157,1,0,False,Legitimate,Low,23,10,33,synthetic2026,social_engineering_advanced,,[],"{'suspicious_keywords_found': ['payment'], 'num_suspicious_keywords': 1, 'urgency_words_found': ['right now'], 'has_urgency': True, 'has_links': False, 'num_links': 0, 'has_email_addresses': False, 'num_email_addresses': 0}","Risk Level: Low
+Confidence Score: 50
+Final Verdict: Legitimate
+Short Reason: Gemini was unavailable, so fallback analysis was used. No strong phishing indicator combinations were detected."
+158,1,0,False,Legitimate,Low,0,10,10,synthetic2026,authority_scam,,[],"{'suspicious_keywords_found': [], 'num_suspicious_keywords': 0, 'urgency_words_found': [], 'has_urgency': False, 'has_links': False, 'num_links': 0, 'has_email_addresses': False, 'num_email_addresses': 0}","Risk Level: Low
+Confidence Score: 50
+Final Verdict: Legitimate
+Short Reason: Gemini was unavailable, so fallback analysis was used. No strong phishing indicator combinations were detected."
+160,1,0,False,Legitimate,Low,16,10,26,synthetic2026,generic_phishing,,[],"{'suspicious_keywords_found': ['click', 'update'], 'num_suspicious_keywords': 2, 'urgency_words_found': [], 'has_urgency': False, 'has_links': False, 'num_links': 0, 'has_email_addresses': False, 'num_email_addresses': 0}","Risk Level: Low
+Confidence Score: 50
+Final Verdict: Legitimate
+Short Reason: Gemini was unavailable, so fallback analysis was used. No strong phishing indicator combinations were detected."
+163,0,1,False,Suspicious,Medium,16,25,41,synthetic2026,legitimate,"Invoice confirmation I booked the lab for next Wednesday. The calendar invite includes location and equipment details. I'll share the slides later today. Best, Morgan Khan",[],"{'suspicious_keywords_found': ['confirm', 'invoice'], 'num_suspicious_keywords': 2, 'urgency_words_found': [], 'has_urgency': False, 'has_links': False, 'num_links': 0, 'has_email_addresses': False, 'num_email_addresses': 0}","Risk Level: Medium
+Confidence Score: 55
+Final Verdict: Phishing
+Short Reason: Gemini was unavailable, so fallback analysis was used. Some suspicious indicators were detected, but confidence is limited."
+167,1,0,False,Legitimate,Low,0,10,10,synthetic2026,tech_support,,[],"{'suspicious_keywords_found': [], 'num_suspicious_keywords': 0, 'urgency_words_found': [], 'has_urgency': False, 'has_links': False, 'num_links': 0, 'has_email_addresses': False, 'num_email_addresses': 0}","Risk Level: Low
+Confidence Score: 50
+Final Verdict: Legitimate
+Short Reason: Gemini was unavailable, so fallback analysis was used. No strong phishing indicator combinations were detected."
+171,1,0,False,Legitimate,Low,16,10,26,synthetic2026,generic_phishing,,[],"{'suspicious_keywords_found': ['click', 'update'], 'num_suspicious_keywords': 2, 'urgency_words_found': [], 'has_urgency': False, 'has_links': False, 'num_links': 0, 'has_email_addresses': False, 'num_email_addresses': 0}","Risk Level: Low
+Confidence Score: 50
+Final Verdict: Legitimate
+Short Reason: Gemini was unavailable, so fallback analysis was used. No strong phishing indicator combinations were detected."
+178,1,0,False,Legitimate,Low,16,10,26,synthetic2026,generic_phishing,,[],"{'suspicious_keywords_found': ['click', 'update'], 'num_suspicious_keywords': 2, 'urgency_words_found': [], 'has_urgency': False, 'has_links': False, 'num_links': 0, 'has_email_addresses': False, 'num_email_addresses': 0}","Risk Level: Low
+Confidence Score: 50
+Final Verdict: Legitimate
+Short Reason: Gemini was unavailable, so fallback analysis was used. No strong phishing indicator combinations were detected."
+179,1,0,False,Legitimate,Low,0,10,10,synthetic2026,tech_support,,[],"{'suspicious_keywords_found': [], 'num_suspicious_keywords': 0, 'urgency_words_found': [], 'has_urgency': False, 'has_links': False, 'num_links': 0, 'has_email_addresses': False, 'num_email_addresses': 0}","Risk Level: Low
+Confidence Score: 50
+Final Verdict: Legitimate
+Short Reason: Gemini was unavailable, so fallback analysis was used. No strong phishing indicator combinations were detected."
+180,1,0,False,Legitimate,Low,8,10,18,synthetic2026,financial_scam,,[],"{'suspicious_keywords_found': ['payment'], 'num_suspicious_keywords': 1, 'urgency_words_found': [], 'has_urgency': False, 'has_links': False, 'num_links': 0, 'has_email_addresses': False, 'num_email_addresses': 0}","Risk Level: Low
+Confidence Score: 50
+Final Verdict: Legitimate
+Short Reason: Gemini was unavailable, so fallback analysis was used. No strong phishing indicator combinations were detected."
+184,1,0,False,Legitimate,Low,0,10,10,synthetic2026,authority_scam,,[],"{'suspicious_keywords_found': [], 'num_suspicious_keywords': 0, 'urgency_words_found': [], 'has_urgency': False, 'has_links': False, 'num_links': 0, 'has_email_addresses': False, 'num_email_addresses': 0}","Risk Level: Low
+Confidence Score: 50
+Final Verdict: Legitimate
+Short Reason: Gemini was unavailable, so fallback analysis was used. No strong phishing indicator combinations were detected."
+187,1,0,False,Legitimate,Low,0,10,10,synthetic2026,financial_scam,,[],"{'suspicious_keywords_found': [], 'num_suspicious_keywords': 0, 'urgency_words_found': [], 'has_urgency': False, 'has_links': False, 'num_links': 0, 'has_email_addresses': False, 'num_email_addresses': 0}","Risk Level: Low
+Confidence Score: 50
+Final Verdict: Legitimate
+Short Reason: Gemini was unavailable, so fallback analysis was used. No strong phishing indicator combinations were detected."
+190,1,0,False,Legitimate,Low,16,10,26,synthetic2026,generic_phishing,,[],"{'suspicious_keywords_found': ['click', 'update'], 'num_suspicious_keywords': 2, 'urgency_words_found': [], 'has_urgency': False, 'has_links': False, 'num_links': 0, 'has_email_addresses': False, 'num_email_addresses': 0}","Risk Level: Low
+Confidence Score: 50
+Final Verdict: Legitimate
+Short Reason: Gemini was unavailable, so fallback analysis was used. No strong phishing indicator combinations were detected."
+193,1,0,False,Legitimate,Low,0,10,10,synthetic2026,threats,,[],"{'suspicious_keywords_found': [], 'num_suspicious_keywords': 0, 'urgency_words_found': [], 'has_urgency': False, 'has_links': False, 'num_links': 0, 'has_email_addresses': False, 'num_email_addresses': 0}","Risk Level: Low
+Confidence Score: 50
+Final Verdict: Legitimate
+Short Reason: Gemini was unavailable, so fallback analysis was used. No strong phishing indicator combinations were detected."
+194,1,0,False,Legitimate,Low,23,10,33,synthetic2026,social_engineering_advanced,,[],"{'suspicious_keywords_found': ['payment'], 'num_suspicious_keywords': 1, 'urgency_words_found': ['right now'], 'has_urgency': True, 'has_links': False, 'num_links': 0, 'has_email_addresses': False, 'num_email_addresses': 0}","Risk Level: Low
+Confidence Score: 50
+Final Verdict: Legitimate
+Short Reason: Gemini was unavailable, so fallback analysis was used. No strong phishing indicator combinations were detected."
+195,1,0,False,Legitimate,Low,8,10,18,synthetic2026,romance_dating,,[],"{'suspicious_keywords_found': ['payment'], 'num_suspicious_keywords': 1, 'urgency_words_found': [], 'has_urgency': False, 'has_links': False, 'num_links': 0, 'has_email_addresses': False, 'num_email_addresses': 0}","Risk Level: Low
+Confidence Score: 50
+Final Verdict: Legitimate
+Short Reason: Gemini was unavailable, so fallback analysis was used. No strong phishing indicator combinations were detected."
+198,0,1,False,Suspicious,Medium,16,25,41,synthetic2026,legitimate,"Invoice confirmation I booked the lab for next Wednesday. The calendar invite includes location and equipment details. Let me know if the timing works for you. Best, Casey Nguyen",[],"{'suspicious_keywords_found': ['confirm', 'invoice'], 'num_suspicious_keywords': 2, 'urgency_words_found': [], 'has_urgency': False, 'has_links': False, 'num_links': 0, 'has_email_addresses': False, 'num_email_addresses': 0}","Risk Level: Medium
+Confidence Score: 55
+Final Verdict: Phishing
+Short Reason: Gemini was unavailable, so fallback analysis was used. Some suspicious indicators were detected, but confidence is limited."
+200,1,0,False,Legitimate,Low,8,10,18,synthetic2026,financial_scam,,[],"{'suspicious_keywords_found': ['payment'], 'num_suspicious_keywords': 1, 'urgency_words_found': [], 'has_urgency': False, 'has_links': False, 'num_links': 0, 'has_email_addresses': False, 'num_email_addresses': 0}","Risk Level: Low
+Confidence Score: 50
+Final Verdict: Legitimate
+Short Reason: Gemini was unavailable, so fallback analysis was used. No strong phishing indicator combinations were detected."
+201,1,0,False,Legitimate,Low,0,10,10,synthetic2026,authority_scam,,[],"{'suspicious_keywords_found': [], 'num_suspicious_keywords': 0, 'urgency_words_found': [], 'has_urgency': False, 'has_links': False, 'num_links': 0, 'has_email_addresses': False, 'num_email_addresses': 0}","Risk Level: Low
+Confidence Score: 50
+Final Verdict: Legitimate
+Short Reason: Gemini was unavailable, so fallback analysis was used. No strong phishing indicator combinations were detected."
+205,1,0,False,Legitimate,Low,8,10,18,synthetic2026,romance_dating,,[],"{'suspicious_keywords_found': ['payment'], 'num_suspicious_keywords': 1, 'urgency_words_found': [], 'has_urgency': False, 'has_links': False, 'num_links': 0, 'has_email_addresses': False, 'num_email_addresses': 0}","Risk Level: Low
+Confidence Score: 50
+Final Verdict: Legitimate
+Short Reason: Gemini was unavailable, so fallback analysis was used. No strong phishing indicator combinations were detected."
+206,1,0,False,Legitimate,Low,8,10,18,synthetic2026,urgency,,[],"{'suspicious_keywords_found': ['access'], 'num_suspicious_keywords': 1, 'urgency_words_found': [], 'has_urgency': False, 'has_links': False, 'num_links': 0, 'has_email_addresses': False, 'num_email_addresses': 0}","Risk Level: Low
+Confidence Score: 50
+Final Verdict: Legitimate
+Short Reason: Gemini was unavailable, so fallback analysis was used. No strong phishing indicator combinations were detected."
+207,1,0,False,Legitimate,Low,0,10,10,synthetic2026,threats,,[],"{'suspicious_keywords_found': [], 'num_suspicious_keywords': 0, 'urgency_words_found': [], 'has_urgency': False, 'has_links': False, 'num_links': 0, 'has_email_addresses': False, 'num_email_addresses': 0}","Risk Level: Low
+Confidence Score: 50
+Final Verdict: Legitimate
+Short Reason: Gemini was unavailable, so fallback analysis was used. No strong phishing indicator combinations were detected."
+212,1,0,False,Legitimate,Low,8,10,18,synthetic2026,financial_scam,,[],"{'suspicious_keywords_found': ['payment'], 'num_suspicious_keywords': 1, 'urgency_words_found': [], 'has_urgency': False, 'has_links': False, 'num_links': 0, 'has_email_addresses': False, 'num_email_addresses': 0}","Risk Level: Low
+Confidence Score: 50
+Final Verdict: Legitimate
+Short Reason: Gemini was unavailable, so fallback analysis was used. No strong phishing indicator combinations were detected."
+214,1,0,False,Legitimate,Low,0,10,10,synthetic2026,tech_support,,[],"{'suspicious_keywords_found': [], 'num_suspicious_keywords': 0, 'urgency_words_found': [], 'has_urgency': False, 'has_links': False, 'num_links': 0, 'has_email_addresses': False, 'num_email_addresses': 0}","Risk Level: Low
+Confidence Score: 50
+Final Verdict: Legitimate
+Short Reason: Gemini was unavailable, so fallback analysis was used. No strong phishing indicator combinations were detected."
+215,1,0,False,Legitimate,Low,0,10,10,synthetic2026,authority_scam,,[],"{'suspicious_keywords_found': [], 'num_suspicious_keywords': 0, 'urgency_words_found': [], 'has_urgency': False, 'has_links': False, 'num_links': 0, 'has_email_addresses': False, 'num_email_addresses': 0}","Risk Level: Low
+Confidence Score: 50
+Final Verdict: Legitimate
+Short Reason: Gemini was unavailable, so fallback analysis was used. No strong phishing indicator combinations were detected."
+216,1,0,False,Legitimate,Low,16,10,26,synthetic2026,generic_phishing,,[],"{'suspicious_keywords_found': ['click', 'update'], 'num_suspicious_keywords': 2, 'urgency_words_found': [], 'has_urgency': False, 'has_links': False, 'num_links': 0, 'has_email_addresses': False, 'num_email_addresses': 0}","Risk Level: Low
+Confidence Score: 50
+Final Verdict: Legitimate
+Short Reason: Gemini was unavailable, so fallback analysis was used. No strong phishing indicator combinations were detected."
+219,1,0,False,Legitimate,Low,8,10,18,synthetic2026,financial_scam,,[],"{'suspicious_keywords_found': ['payment'], 'num_suspicious_keywords': 1, 'urgency_words_found': [], 'has_urgency': False, 'has_links': False, 'num_links': 0, 'has_email_addresses': False, 'num_email_addresses': 0}","Risk Level: Low
+Confidence Score: 50
+Final Verdict: Legitimate
+Short Reason: Gemini was unavailable, so fallback analysis was used. No strong phishing indicator combinations were detected."
+222,1,0,False,Legitimate,Low,0,10,10,synthetic2026,tech_support,,[],"{'suspicious_keywords_found': [], 'num_suspicious_keywords': 0, 'urgency_words_found': [], 'has_urgency': False, 'has_links': False, 'num_links': 0, 'has_email_addresses': False, 'num_email_addresses': 0}","Risk Level: Low
+Confidence Score: 50
+Final Verdict: Legitimate
+Short Reason: Gemini was unavailable, so fallback analysis was used. No strong phishing indicator combinations were detected."
+223,1,0,False,Legitimate,Low,0,10,10,synthetic2026,authority_scam,,[],"{'suspicious_keywords_found': [], 'num_suspicious_keywords': 0, 'urgency_words_found': [], 'has_urgency': False, 'has_links': False, 'num_links': 0, 'has_email_addresses': False, 'num_email_addresses': 0}","Risk Level: Low
+Confidence Score: 50
+Final Verdict: Legitimate
+Short Reason: Gemini was unavailable, so fallback analysis was used. No strong phishing indicator combinations were detected."
+225,1,0,False,Legitimate,Low,16,10,26,synthetic2026,generic_phishing,,[],"{'suspicious_keywords_found': ['click', 'update'], 'num_suspicious_keywords': 2, 'urgency_words_found': [], 'has_urgency': False, 'has_links': False, 'num_links': 0, 'has_email_addresses': False, 'num_email_addresses': 0}","Risk Level: Low
+Confidence Score: 50
+Final Verdict: Legitimate
+Short Reason: Gemini was unavailable, so fallback analysis was used. No strong phishing indicator combinations were detected."
+226,1,0,False,Legitimate,Low,0,10,10,synthetic2026,threats,,[],"{'suspicious_keywords_found': [], 'num_suspicious_keywords': 0, 'urgency_words_found': [], 'has_urgency': False, 'has_links': False, 'num_links': 0, 'has_email_addresses': False, 'num_email_addresses': 0}","Risk Level: Low
+Confidence Score: 50
+Final Verdict: Legitimate
+Short Reason: Gemini was unavailable, so fallback analysis was used. No strong phishing indicator combinations were detected."
+231,1,0,False,Legitimate,Low,0,10,10,synthetic2026,tech_support,,[],"{'suspicious_keywords_found': [], 'num_suspicious_keywords': 0, 'urgency_words_found': [], 'has_urgency': False, 'has_links': False, 'num_links': 0, 'has_email_addresses': False, 'num_email_addresses': 0}","Risk Level: Low
+Confidence Score: 50
+Final Verdict: Legitimate
+Short Reason: Gemini was unavailable, so fallback analysis was used. No strong phishing indicator combinations were detected."
+233,0,1,False,Suspicious,Medium,23,25,48,enron,legitimate,,[],"{'suspicious_keywords_found': ['access'], 'num_suspicious_keywords': 1, 'urgency_words_found': ['immediately'], 'has_urgency': True, 'has_links': False, 'num_links': 0, 'has_email_addresses': False, 'num_email_addresses': 0}","Risk Level: Medium
+Confidence Score: 55
+Final Verdict: Phishing
+Short Reason: Gemini was unavailable, so fallback analysis was used. Urgency language appeared with a suspicious account/payment/action-related term."
+234,1,0,False,Legitimate,Low,16,10,26,synthetic2026,generic_phishing,,[],"{'suspicious_keywords_found': ['click', 'update'], 'num_suspicious_keywords': 2, 'urgency_words_found': [], 'has_urgency': False, 'has_links': False, 'num_links': 0, 'has_email_addresses': False, 'num_email_addresses': 0}","Risk Level: Low
+Confidence Score: 50
+Final Verdict: Legitimate
+Short Reason: Gemini was unavailable, so fallback analysis was used. No strong phishing indicator combinations were detected."
+236,1,0,False,Legitimate,Low,8,10,18,synthetic2026,financial_scam,,[],"{'suspicious_keywords_found': ['payment'], 'num_suspicious_keywords': 1, 'urgency_words_found': [], 'has_urgency': False, 'has_links': False, 'num_links': 0, 'has_email_addresses': False, 'num_email_addresses': 0}","Risk Level: Low
+Confidence Score: 50
+Final Verdict: Legitimate
+Short Reason: Gemini was unavailable, so fallback analysis was used. No strong phishing indicator combinations were detected."
+237,0,1,False,Suspicious,Medium,16,25,41,synthetic2026,legitimate,"Schedule confirmation Good morning, the updated agenda for next week is included below. Please check your tasks and add comments. Feel free to add notes before we meet. Best, Sam Lee",[],"{'suspicious_keywords_found': ['confirm', 'update'], 'num_suspicious_keywords': 2, 'urgency_words_found': [], 'has_urgency': False, 'has_links': False, 'num_links': 0, 'has_email_addresses': False, 'num_email_addresses': 0}","Risk Level: Medium
+Confidence Score: 55
+Final Verdict: Phishing
+Short Reason: Gemini was unavailable, so fallback analysis was used. Some suspicious indicators were detected, but confidence is limited."
+239,1,0,False,Legitimate,Low,0,10,10,synthetic2026,tech_support,,[],"{'suspicious_keywords_found': [], 'num_suspicious_keywords': 0, 'urgency_words_found': [], 'has_urgency': False, 'has_links': False, 'num_links': 0, 'has_email_addresses': False, 'num_email_addresses': 0}","Risk Level: Low
+Confidence Score: 50
+Final Verdict: Legitimate
+Short Reason: Gemini was unavailable, so fallback analysis was used. No strong phishing indicator combinations were detected."
+250,1,0,False,Legitimate,Low,8,10,18,synthetic2026,romance_dating,,[],"{'suspicious_keywords_found': ['payment'], 'num_suspicious_keywords': 1, 'urgency_words_found': [], 'has_urgency': False, 'has_links': False, 'num_links': 0, 'has_email_addresses': False, 'num_email_addresses': 0}","Risk Level: Low
+Confidence Score: 50
+Final Verdict: Legitimate
+Short Reason: Gemini was unavailable, so fallback analysis was used. No strong phishing indicator combinations were detected."
+252,1,0,False,Legitimate,Low,23,10,33,synthetic2026,social_engineering_advanced,,[],"{'suspicious_keywords_found': ['payment'], 'num_suspicious_keywords': 1, 'urgency_words_found': ['right now'], 'has_urgency': True, 'has_links': False, 'num_links': 0, 'has_email_addresses': False, 'num_email_addresses': 0}","Risk Level: Low
+Confidence Score: 50
+Final Verdict: Legitimate
+Short Reason: Gemini was unavailable, so fallback analysis was used. No strong phishing indicator combinations were detected."
+258,1,0,False,Legitimate,Low,0,10,10,synthetic2026,authority_scam,,[],"{'suspicious_keywords_found': [], 'num_suspicious_keywords': 0, 'urgency_words_found': [], 'has_urgency': False, 'has_links': False, 'num_links': 0, 'has_email_addresses': False, 'num_email_addresses': 0}","Risk Level: Low
+Confidence Score: 50
+Final Verdict: Legitimate
+Short Reason: Gemini was unavailable, so fallback analysis was used. No strong phishing indicator combinations were detected."
+259,1,0,False,Legitimate,Low,0,10,10,synthetic2026,threats,,[],"{'suspicious_keywords_found': [], 'num_suspicious_keywords': 0, 'urgency_words_found': [], 'has_urgency': False, 'has_links': False, 'num_links': 0, 'has_email_addresses': False, 'num_email_addresses': 0}","Risk Level: Low
+Confidence Score: 50
+Final Verdict: Legitimate
+Short Reason: Gemini was unavailable, so fallback analysis was used. No strong phishing indicator combinations were detected."
+260,1,0,False,Legitimate,Low,16,10,26,synthetic2026,generic_phishing,,[],"{'suspicious_keywords_found': ['click', 'update'], 'num_suspicious_keywords': 2, 'urgency_words_found': [], 'has_urgency': False, 'has_links': False, 'num_links': 0, 'has_email_addresses': False, 'num_email_addresses': 0}","Risk Level: Low
+Confidence Score: 50
+Final Verdict: Legitimate
+Short Reason: Gemini was unavailable, so fallback analysis was used. No strong phishing indicator combinations were detected."
+262,1,0,False,Legitimate,Low,23,10,33,synthetic2026,social_engineering_advanced,,[],"{'suspicious_keywords_found': ['payment'], 'num_suspicious_keywords': 1, 'urgency_words_found': ['right now'], 'has_urgency': True, 'has_links': False, 'num_links': 0, 'has_email_addresses': False, 'num_email_addresses': 0}","Risk Level: Low
+Confidence Score: 50
+Final Verdict: Legitimate
+Short Reason: Gemini was unavailable, so fallback analysis was used. No strong phishing indicator combinations were detected."
+263,1,0,False,Legitimate,Low,0,10,10,synthetic2026,threats,,[],"{'suspicious_keywords_found': [], 'num_suspicious_keywords': 0, 'urgency_words_found': [], 'has_urgency': False, 'has_links': False, 'num_links': 0, 'has_email_addresses': False, 'num_email_addresses': 0}","Risk Level: Low
+Confidence Score: 50
+Final Verdict: Legitimate
+Short Reason: Gemini was unavailable, so fallback analysis was used. No strong phishing indicator combinations were detected."
+265,1,0,False,Legitimate,Low,8,10,18,synthetic2026,romance_dating,,[],"{'suspicious_keywords_found': ['payment'], 'num_suspicious_keywords': 1, 'urgency_words_found': [], 'has_urgency': False, 'has_links': False, 'num_links': 0, 'has_email_addresses': False, 'num_email_addresses': 0}","Risk Level: Low
+Confidence Score: 50
+Final Verdict: Legitimate
+Short Reason: Gemini was unavailable, so fallback analysis was used. No strong phishing indicator combinations were detected."
+266,1,0,False,Legitimate,Low,0,10,10,synthetic2026,threats,,[],"{'suspicious_keywords_found': [], 'num_suspicious_keywords': 0, 'urgency_words_found': [], 'has_urgency': False, 'has_links': False, 'num_links': 0, 'has_email_addresses': False, 'num_email_addresses': 0}","Risk Level: Low
+Confidence Score: 50
+Final Verdict: Legitimate
+Short Reason: Gemini was unavailable, so fallback analysis was used. No strong phishing indicator combinations were detected."
+276,1,0,False,Legitimate,Low,0,10,10,synthetic2026,authority_scam,,[],"{'suspicious_keywords_found': [], 'num_suspicious_keywords': 0, 'urgency_words_found': [], 'has_urgency': False, 'has_links': False, 'num_links': 0, 'has_email_addresses': False, 'num_email_addresses': 0}","Risk Level: Low
+Confidence Score: 50
+Final Verdict: Legitimate
+Short Reason: Gemini was unavailable, so fallback analysis was used. No strong phishing indicator combinations were detected."
+279,1,0,False,Legitimate,Low,8,10,18,synthetic2026,romance_dating,,[],"{'suspicious_keywords_found': ['payment'], 'num_suspicious_keywords': 1, 'urgency_words_found': [], 'has_urgency': False, 'has_links': False, 'num_links': 0, 'has_email_addresses': False, 'num_email_addresses': 0}","Risk Level: Low
+Confidence Score: 50
+Final Verdict: Legitimate
+Short Reason: Gemini was unavailable, so fallback analysis was used. No strong phishing indicator combinations were detected."
+280,1,0,False,Legitimate,Low,0,10,10,synthetic2026,financial_scam,,[],"{'suspicious_keywords_found': [], 'num_suspicious_keywords': 0, 'urgency_words_found': [], 'has_urgency': False, 'has_links': False, 'num_links': 0, 'has_email_addresses': False, 'num_email_addresses': 0}","Risk Level: Low
+Confidence Score: 50
+Final Verdict: Legitimate
+Short Reason: Gemini was unavailable, so fallback analysis was used. No strong phishing indicator combinations were detected."
+283,0,1,False,Suspicious,Medium,26,40,66,enron,legitimate,,"['http://spr5wb02.enron.com/scripts/wgate/bbpstart/!?%7Elanguage=en', 'http://isc.enron.com/site/doclibrary/user/default.asp', 'http://iscedcenter.enron.com']","{'suspicious_keywords_found': ['password', 'access'], 'num_suspicious_keywords': 2, 'urgency_words_found': [], 'has_urgency': False, 'has_links': True, 'num_links': 3, 'has_email_addresses': False, 'num_email_addresses': 0}","Risk Level: High
+Confidence Score: 70
+Final Verdict: Phishing
+Short Reason: Gemini was unavailable, so fallback analysis was used. Multiple phishing indicators were detected in combination."
+290,1,0,False,Legitimate,Low,0,10,10,synthetic2026,authority_scam,,[],"{'suspicious_keywords_found': [], 'num_suspicious_keywords': 0, 'urgency_words_found': [], 'has_urgency': False, 'has_links': False, 'num_links': 0, 'has_email_addresses': False, 'num_email_addresses': 0}","Risk Level: Low
+Confidence Score: 50
+Final Verdict: Legitimate
+Short Reason: Gemini was unavailable, so fallback analysis was used. No strong phishing indicator combinations were detected."
+291,1,0,False,Legitimate,Low,0,10,10,synthetic2026,tech_support,,[],"{'suspicious_keywords_found': [], 'num_suspicious_keywords': 0, 'urgency_words_found': [], 'has_urgency': False, 'has_links': False, 'num_links': 0, 'has_email_addresses': False, 'num_email_addresses': 0}","Risk Level: Low
+Confidence Score: 50
+Final Verdict: Legitimate
+Short Reason: Gemini was unavailable, so fallback analysis was used. No strong phishing indicator combinations were detected."
+293,1,0,False,Legitimate,Low,0,10,10,synthetic2026,financial_scam,,[],"{'suspicious_keywords_found': [], 'num_suspicious_keywords': 0, 'urgency_words_found': [], 'has_urgency': False, 'has_links': False, 'num_links': 0, 'has_email_addresses': False, 'num_email_addresses': 0}","Risk Level: Low
+Confidence Score: 50
+Final Verdict: Legitimate
+Short Reason: Gemini was unavailable, so fallback analysis was used. No strong phishing indicator combinations were detected."
+300,1,0,False,Legitimate,Low,8,10,18,synthetic2026,financial_scam,,[],"{'suspicious_keywords_found': ['payment'], 'num_suspicious_keywords': 1, 'urgency_words_found': [], 'has_urgency': False, 'has_links': False, 'num_links': 0, 'has_email_addresses': False, 'num_email_addresses': 0}","Risk Level: Low
+Confidence Score: 50
+Final Verdict: Legitimate
+Short Reason: Gemini was unavailable, so fallback analysis was used. No strong phishing indicator combinations were detected."

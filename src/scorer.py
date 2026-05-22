@@ -21,16 +21,27 @@ def score_email(features, llm_result):
 def calculate_feature_score(features):
     """
     Assign points based on extracted rule-based features.
+    Link alone should not dominate the score.
     """
 
     score = 0
-    score += features.get("num_suspicious_keywords", 0) * 10
+
+    num_keywords = features.get("num_suspicious_keywords", 0)
+    num_links = features.get("num_links", 0)
+
+    score += num_keywords * 8
 
     if features.get("has_urgency"):
         score += 15
 
-    if features.get("has_links"):
-        score += 15
+    # links alone are weak, but links + keywords are stronger
+    if num_links > 0 and num_keywords > 0:
+        score += 10
+    elif num_links > 0:
+        score += 5
+
+    if num_links >= 5:
+        score += 10
 
     if features.get("has_generic_greeting"):
         score += 10
@@ -60,9 +71,9 @@ def get_risk_level(final_score):
 
     if final_score >= 70:
         return "High"
-    elif final_score >= 40:
+    elif final_score >= 35:
         return "Medium"
-    return "Low" 
+    return "Low"
 
 def get_final_verdict(risk_level):
     """
