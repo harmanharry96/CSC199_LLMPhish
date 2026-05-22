@@ -1,3 +1,11 @@
+"""
+This file runs a simple demo of the full PhishLLM pipeline.
+
+I used two sample emails here so someone reviewing the repo can quickly see
+how the parser, feature extraction, LLM/fallback analysis, and scoring engine
+work together.
+"""
+
 from email_parser import parse_email
 from feature_extract import extract_features
 from llm_check import analyze_with_llm
@@ -28,7 +36,10 @@ def run_demo_case(case_name, sample_email):
     pretty_print_dict("--- Feature Extraction Output ---", features)
 
     print("\n4. Running LLM Analysis...")
+
+    # Fallback is turned on so the demo still works if Gemini is unavailable.
     llm_result = analyze_with_llm(parsed_email, use_mock_fallback=True)
+
     print("\n--- LLM Analysis Output ---")
     print(llm_result)
 

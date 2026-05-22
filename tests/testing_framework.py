@@ -1,3 +1,11 @@
+"""
+This file runs the main testing framework for PhishLLM.
+
+It loads a labeled dataset, runs each email through the full pipeline,
+saves the prediction results, and creates an error log for the emails
+that were predicted incorrectly.
+"""
+
 import csv
 import os
 import sys
@@ -10,7 +18,7 @@ from llm_check import analyze_with_llm
 from scorer import score_email
 
 
-MAX_SAMPLES = 50  # Starting small for testing
+MAX_SAMPLES = 100  # Final test size used for the project results.
 
 
 def load_dataset(input_csv, max_samples=None):
@@ -28,13 +36,9 @@ def load_dataset(input_csv, max_samples=None):
 
 
 def verdict_to_label(final_verdict):
-    """
-    Convert final verdict into numeric label.
-    1 = phishing/suspicious
-    0 = legitimate
-    """
     if final_verdict in ["Phishing", "Suspicious"]:
         return 1
+
     return 0
 
 
@@ -106,7 +110,10 @@ def run_testing_framework(input_csv, results_csv, error_csv, max_samples=10):
 
             parsed_email = parse_email(raw_email)
             features = extract_features(parsed_email)
-            llm_result = analyze_with_llm(parsed_email)
+
+            # Fallback keeps the testing framework running if Gemini is unavailable.
+            llm_result = analyze_with_llm(parsed_email, use_mock_fallback=True)
+
             decision = score_email(features, llm_result)
 
             final_verdict = decision["final_verdict"]

@@ -1,10 +1,14 @@
+"""
+This file handles basic email parsing for PhishLLM.
+
+I kept this separate because the rest of the project needs the email
+broken into useful parts first, like subject, body, links, and email addresses.
+"""
+
 import re
 
 
 def parse_email(email_text):
-    """
-    Parse raw email text into a structured dictionary.
-    """
     if not email_text:
         return {
             "subject": None,
@@ -32,9 +36,6 @@ def parse_email(email_text):
 
 
 def clean_email_text(email_text):
-    """
-    Clean email text by removing extra spaces and normalizing line breaks.
-    """
     email_text = email_text.strip()
     email_text = re.sub(r"\r\n", "\n", email_text)
     email_text = re.sub(r"[ \t]+", " ", email_text)
@@ -43,9 +44,6 @@ def clean_email_text(email_text):
 
 
 def extract_links(email_text):
-    """
-    Extract URLs from email text.
-    """
     url_pattern = r"(https?://[^\s]+|www\.[^\s]+)"
     links = re.findall(url_pattern, email_text)
 
@@ -57,17 +55,11 @@ def extract_links(email_text):
 
 
 def extract_email_addresses(email_text):
-    """
-    Extract email addresses from email text.
-    """
     email_pattern = r"\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b"
     return re.findall(email_pattern, email_text)
 
 
 def extract_subject(email_text):
-    """
-    Extract subject if the email starts with 'Subject:'.
-    """
     lines = email_text.splitlines()
 
     if lines and lines[0].lower().startswith("subject:"):

@@ -1,12 +1,14 @@
+"""
+This file handles the LLM part of PhishLLM.
+
+It sends the parsed email to Gemini for analysis. I also added a fallback
+method so the project can still return a result when Gemini is unavailable.
+"""
+
 from gemini import get_gemini_client
 
 
 def analyze_with_llm(parsed_email, use_mock_fallback=True):
-    """
-    Analyze email using Gemini.
-    If Gemini is unavailable, return a fallback analysis so the pipeline does not break.
-    """
-
     prompt = f"""
 You are a cybersecurity assistant specialized in phishing detection.
 
@@ -50,11 +52,6 @@ Short Reason: (1-2 sentence explanation)
 
 
 def fallback_llm_result(parsed_email):
-    """
-    Simple fallback when Gemini is unavailable.
-    Uses combinations of phishing indicators instead of single weak signals.
-    """
-
     subject = (parsed_email.get("subject") or "").lower()
     body = (parsed_email.get("body") or "").lower()
     text = f"{subject} {body}"
@@ -104,7 +101,7 @@ def fallback_llm_result(parsed_email):
 
     has_link = len(links) > 0
 
-    # High risk requires combinations
+    # I used combinations here because one keyword by itself was causing false positives.
     if (
         (has_link and credential_hits >= 1)
         or (urgency_hits >= 1 and credential_hits >= 1)
@@ -116,7 +113,7 @@ Confidence Score: 70
 Final Verdict: Phishing
 Short Reason: Gemini was unavailable, so fallback analysis was used. Multiple phishing indicators were detected in combination."""
 
-    # Medium risk for urgency + suspicious keyword patterns
+    # Medium risk catches weaker suspicious patterns without making everything high risk.
     if urgency_hits >= 1 and (
         "payment" in text
         or "access" in text
@@ -129,7 +126,7 @@ Confidence Score: 55
 Final Verdict: Phishing
 Short Reason: Gemini was unavailable, so fallback analysis was used. Urgency language appeared with a suspicious account/payment/action-related term."""
 
-    # Medium risk for weaker combinations
+    # This is for weaker signals that still look suspicious but are not strong enough for high risk.
     if (
         credential_hits >= 1
         or threat_hits >= 1

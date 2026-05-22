@@ -1,8 +1,13 @@
+"""
+This file handles the final scoring and decision logic for PhishLLM.
+
+I kept this separate because I wanted the final verdict to use both
+rule-based features and the Gemini/fallback result instead of depending
+on only one method.
+"""
+
+
 def score_email(features, llm_result):
-    """
-    Combine rule-based features and LLm output into a final phishing score.
-    """
-    
     feature_score = calculate_feature_score(features)
     llm_score = extract_llm_score(llm_result)
 
@@ -18,12 +23,8 @@ def score_email(features, llm_result):
         "final_verdict": final_verdict
     }
 
-def calculate_feature_score(features):
-    """
-    Assign points based on extracted rule-based features.
-    Link alone should not dominate the score.
-    """
 
+def calculate_feature_score(features):
     score = 0
 
     num_keywords = features.get("num_suspicious_keywords", 0)
@@ -34,7 +35,7 @@ def calculate_feature_score(features):
     if features.get("has_urgency"):
         score += 15
 
-    # links alone are weak, but links + keywords are stronger
+    # Links alone are weak, but links + suspicious keywords are stronger.
     if num_links > 0 and num_keywords > 0:
         score += 10
     elif num_links > 0:
@@ -43,16 +44,10 @@ def calculate_feature_score(features):
     if num_links >= 5:
         score += 10
 
-    if features.get("has_generic_greeting"):
-        score += 10
-
     return score
 
-def extract_llm_score(llm_result):
-    """
-    Convert LLM risk level into a numberic score.
-    """
 
+def extract_llm_score(llm_result):
     llm_result_lower = llm_result.lower()
 
     if "risk level: high" in llm_result_lower:
@@ -64,24 +59,20 @@ def extract_llm_score(llm_result):
 
     return 0
 
-def get_risk_level(final_score):
-    """
-    Convert numeric score into risk category.
-    """
 
+def get_risk_level(final_score):
     if final_score >= 70:
         return "High"
     elif final_score >= 35:
         return "Medium"
+
     return "Low"
 
-def get_final_verdict(risk_level):
-    """
-    Convert risk category into final verdict.
-    """
 
+def get_final_verdict(risk_level):
     if risk_level == "High":
         return "Phishing"
     elif risk_level == "Medium":
         return "Suspicious"
+
     return "Legitimate"

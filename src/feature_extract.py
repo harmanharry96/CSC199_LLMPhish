@@ -1,3 +1,13 @@
+"""
+This file handles the rule-based feature extraction for PhishLLM.
+
+I used this file to look for common phishing signs like suspicious words,
+urgency language, links, and email addresses before sending the email
+to the scoring engine.
+"""
+
+# These lists are simple rule-based indicators I used for the prototype.
+# I updated them during testing when I noticed false positives and false negatives.
 SUSPICIOUS_KEYWORDS = [
     "verify",
     "password",
@@ -38,12 +48,10 @@ URGENCY_WORDS = [
     "account closure",
 ]
 
+
 def extract_features(parsed_email):
-    """
-    Extract basic phishing-related features from the parsed email.
-    """
     body = (parsed_email.get("body") or "").lower()
-    subject = (parsed_email.get("subject") or  "").lower()
+    subject = (parsed_email.get("subject") or "").lower()
     full_text = f"{subject} {body}".strip()
 
     suspicious_keywords_found = find_keywords(full_text, SUSPICIOUS_KEYWORDS)
@@ -60,15 +68,14 @@ def extract_features(parsed_email):
         "num_links": len(parsed_email.get("links", [])),
         "has_email_addresses": has_email_addresses,
         "num_email_addresses": len(parsed_email.get("email_addresses", []))
-        
     }
 
-def find_keywords(text,keyword_list):
-    """
-    Return a list of keywords found in the text.
-    """
+
+def find_keywords(text, keyword_list):
     found = []
+
     for keyword in keyword_list:
         if keyword in text:
-            found.append(keyword)           
-    return found    
+            found.append(keyword)
+
+    return found
